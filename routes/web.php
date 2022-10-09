@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/dashboard', function () {
+    return view('dashboard.master');
+});
+
 Route::get('/', function () {
-    return view('master');
+    return view('main');
+});
+
+Route::post('/add/tattoo', [\App\Http\Controllers\TattooController::class, 'store']);
+Route::get('/api/tattoos', [\App\Http\Controllers\TattooController::class, 'show']);
+
+
+Route::get('/tattoos', function () {
+    return view('tattoos');
+});
+
+Route::get('/studio', function () {
+    return view('studio');
 });
