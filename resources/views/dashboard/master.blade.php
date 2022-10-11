@@ -33,18 +33,37 @@
 </head>
 <body class="bg-black text-md">
 <div id="app">
+    {{--delete confirmation--}}
+    <div v-if="isVisible" class="flex justify-center mt-10">
+        <div class="flex items-center justify-between bg-red lg:w-5/12 w-11/12 py-6 px-6">
+            <h1 class="text-white font-bold text-lg">You sure you wanna delete that?</h1>
+            <div class="flex justify-between space-x-2">
+                <button @click="confirmTattooDelete = true; deleteTattoo()"
+                        class="bg-white text-sm font-bold text-black px-6 py-2">
+                    YEP
+                </button>
+                <button @click="isVisible = false; confirmTattooDelete = false; chosenTattooID = ''"
+                        class="bg-white text-sm font-bold text-black px-6 py-2">
+                    NOPE
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     {{--create form--}}
     <div v-if="showForm" class="overflow-x-auto mt-10">
         <div class="min-w-screen flex justify-center overflow-hidden">
-            <div class="w-full lg:w-5/6 pb-10 bg-white p-4 flex flex-wrap justify-center">
+            <div class="w-11/12 lg:w-5/6 pb-10 bg-white p-4 flex flex-wrap justify-center">
                 <div class="w-full flex justify-end">
                     <button @click="showForm = false" class="japan-font text-red font-bold text-xl mb-4 ">
                         X
                     </button>
                 </div>
                 <form class="w-6/12 mt-10">
-                    <div class="mt-2 space-y-6">
-                        <h1 class="font-bold text-2xl japan-font text-red">more tattoos</h1>
+                    <div class="mt-2 space-y-4">
+                        <h1 v-if="!editState" class="font-bold text-2xl japan-font text-red">more tattoos</h1>
+                        <h1 v-if="editState" class="font-bold text-2xl japan-font text-red">edit tattoo</h1>
                         <input type="text" v-model="name"
                                class="w-full  border-2 border-black focus:border-red bg-gray-100 outline-none px-4 py-2"
                                placeholder="Name of tattoo">
@@ -57,14 +76,17 @@
                                class="w-full  border-2 border-black focus:border-red bg-gray-100 outline-none px-4 py-2"
                                placeholder="Price">
                         <div class="flex justify-end">
-                            <button @click="addPost" @keyup.enter="addPost"
+                            <button v-if="!editState" @click="addTattoo" @keyup.enter="addTattoo"
                                     class="outline-none font-bold bg-black text-white border-2 border-black focus:border-red px-6 py-2">
                                 ADD
+                            </button>
+                            <button type="button" v-if="editState" @click="editTattoo(null)" @keyup.enter="editTattoo"
+                                    class="outline-none font-bold bg-black text-white border-2 border-black focus:border-red px-6 py-2">
+                                EDIT
                             </button>
                         </div>
                     </div>
                 </form>
-
 
             </div>
         </div>
@@ -73,10 +95,9 @@
     {{--posts--}}
     <div class="overflow-x-auto mt-16">
         <div class="min-w-screen flex items-center justify-center overflow-hidden">
-            <div class="w-full lg:w-5/6">
+            <div class="w-11/12 lg:w-5/6">
                 <div class="flex justify-between items-center mb-10">
                     <h1 class="font-bold text-2xl japan-font text-white">cool tattoos, keep 'em coming</h1>
-
                     <button @click="showForm = true"
                             class="font-bold bg-white text-red border-2 border-white focus:border-red px-6 py-2">
                         ADD
@@ -103,8 +124,9 @@
 
                             <td class="py-3 px-6 text-left whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <img class="rounded-full w-10 h-10 object-cover object-center hover:transform hover:scale-125 ease-in-out duration-300"
-                                         :src="'/storage/' + tattoo.image" alt="">
+                                    <img
+                                        class="rounded-full w-10 h-10 object-cover object-center hover:transform hover:scale-125 ease-in-out duration-300"
+                                        :src="'/storage/' + tattoo.image" alt="">
                                     {{--                                    <span class="font-medium">@{{}}</span>--}}
                                 </div>
                             </td>
@@ -121,14 +143,18 @@
 
                             <td class="py-3 px-6 text-center">
                                 <div class="flex item-center justify-center">
-                                    <div class="w-4 mr-2 transform hover:text-red hover:scale-110">
+                                    {{--edit--}}
+                                    <div @click="editTattoo(tattoo.id)"
+                                         class="w-4 mr-2 transform hover:text-red hover:scale-110">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                   d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
                                         </svg>
                                     </div>
-                                    <div class="w-4 mr-2 transform hover:text-red hover:scale-110">
+                                    {{--delete--}}
+                                    <div @click="deleteTattoo(tattoo.id)"
+                                         class="w-4 mr-2 transform hover:text-red hover:scale-110">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -138,7 +164,6 @@
                                 </div>
                             </td>
                         </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -159,12 +184,16 @@
             hours: '',
             tattoos: [],
             showForm: false,
+            chosenTattooID: '',
+            isVisible: false,
+            confirmTattooDelete: false,
+            editState: false,
         },
         methods: {
             handleFileUpload(event) {
                 this.image = event.target.files[0];
             },
-            addPost() {
+            addTattoo() {
                 let formData = new FormData();
                 formData.append('image', this.image);
 
@@ -180,22 +209,80 @@
                     }
                 ).then(function () {
                     console.log('SUCCESS!!');
-                })
-                    .catch(function () {
-                        console.log('FAILURE!!');
-                    });
+                    // todo
+                    // this.name = ''
+                    // this.image = ''
+                    // this.price = ''
+                    // this.hours = ''
+                }).catch(function () {
+                    console.log('FAILURE!!');
+                });
+
                 this.showForm = false;
                 this.getTattoos()
             },
             getTattoos() {
                 axios.get('/api/tattoos').then(response => {
-                    console.log(response.data)
+                    // console.log(response.data)
                     this.tattoos = response.data
                 })
+            },
+            deleteTattoo(id) {
+                if (id) {
+                    this.isVisible = true
+                    this.chosenTattooID = id
+                } else {
+                    axios.delete(`/delete/tattoo/${this.chosenTattooID}`)
+                    this.getTattoos()
+                    this.isVisible = false
+                    this.chosenTattooID = ''
+                }
+
+            },
+            editTattoo(id) {
+                console.log(id);
+                if (id) {
+                    this.chosenTattooID = id
+                    this.editState = true
+                    this.showForm = true
+                    let tattooToEdit = this.tattoos.find(tattoo => tattoo.id == id)
+
+                    console.log(tattooToEdit);
+
+                    this.name = tattooToEdit.name
+                    this.image = tattooToEdit.image
+                    this.price = tattooToEdit.price
+                    this.hours = tattooToEdit.hours
+
+                }
+                if (!id) {
+                    let formData = new FormData();
+                    formData.append('image', this.image);
+
+                    axios.post(`/edit/tattoo/${this.chosenTattooID}`,
+                        formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }, params: {
+                                name: this.name,
+                                price: this.price,
+                                hours: this.hours
+                            }
+                        })
+                        .then(response => console.log(response))
+                        .catch(error => console.log(error))
+
+                    this.getTattoos()
+                    this.isVisible = false
+                    this.chosenTattooID = ''
+                    this.showForm = false
+
+                }
+
             }
         },
         mounted() {
-            this.getTattoos()
+            this.getTattoos();
         }
     })
 </script>

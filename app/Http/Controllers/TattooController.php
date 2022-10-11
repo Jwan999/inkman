@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tattoo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 
 class TattooController extends Controller
@@ -90,9 +91,54 @@ class TattooController extends Controller
      * @param \App\Models\Tattoo $tattoo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tattoo $tattoo)
+    public function update(Request $request, Tattoo $tattoo, $id)
     {
-        //
+//        dd($id);
+
+        $tattoo = Tattoo::find($id);
+//        dd();
+        $tattoo->name = $request->name;
+        $tattoo->price = $request->price;
+        $tattoo->hours = $request->hours;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+//          Image::make($image)->resize(300, 300)->
+
+            $image->move(base_path() . '/storage/app/public', $filename);
+//          $image->save(storage_path('/uploads/' . $filename));
+            $tattoo->image = $filename;
+            $tattoo->update();
+        };
+
+        $tattoo->update();
+        return Response::json(["hasFile"=>$request->hasFile("image")]);
+//
+//
+//
+////        dd($id);
+//
+////      Tattoo::where('id', $request->id)
+////      ->update(['name' => $request->name, 'hours' => $request->hours, 'price' => $request->price]);
+//        $tattoo = Tattoo::where('id', $id)->get();
+//
+//        $tattoo->name = $request->name;
+//        $tattoo->price = $request->price;
+//        $tattoo->hours = $request->hours;
+//
+//        $image = $request->file('image');
+//        $filename = time() . '.' . $image->getClientOriginalExtension();
+////      Image::make($image)->resize(300, 300)->
+//
+//        $image->move(base_path() . '/storage/app/public', $filename);
+//
+////      $image->save(storage_path('/uploads/' . $filename));
+//        $tattoo->image = $filename;
+//        $tattoo->update();
+//
+//        return response()->json(['success' => 'Produit modifié avec succès']);
+////        $tattoo->save();
     }
 
     /**
@@ -101,8 +147,9 @@ class TattooController extends Controller
      * @param \App\Models\Tattoo $tattoo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tattoo $tattoo)
+    public function destroy(Tattoo $tattoo, $id)
     {
-        //
+//        dd($id);
+        Tattoo::find($id)->delete();
     }
 }

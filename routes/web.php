@@ -22,6 +22,8 @@ Route::get('/', function () {
 });
 
 Route::post('/add/tattoo', [\App\Http\Controllers\TattooController::class, 'store']);
+Route::delete('/delete/tattoo/{id}', [\App\Http\Controllers\TattooController::class, 'destroy']);
+Route::post('/edit/tattoo/{id}', [\App\Http\Controllers\TattooController::class, 'update']);
 Route::get('/api/tattoos', [\App\Http\Controllers\TattooController::class, 'show']);
 
 
