@@ -37,7 +37,7 @@ class TattooController extends Controller
      */
     public function store(Request $request)
     {
-        dd(phpinfo());
+//        dd(phpinfo());
 
         $tattoo = new tattoo;
         $tattoo->name = $request->name;
