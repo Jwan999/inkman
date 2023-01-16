@@ -4,19 +4,19 @@
             <h1 class="text-red text-8xl font-bold japan-font">03</h1>
             <h1 class=" text-5xl text-white font-bold">SPICE IT UP</h1>
         </div>
-        <p class="text-gray-300 text-lg mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-            corporis
-            cupiditate delectus excepturi
-            facilis, fugit,gb idbllo molestiae molestias nihil numquam officiis pariatur, porro quisquam repellendus
-            soluta
-            tempore totam vel voluptatibus.</p>
+        <p class="text-gray-300 text-lg mt-6">
+            Piercings are a great way to express yourself. They come in a variety of shapes and styles, giving you
+            tons of options to choose from. Whether it’s a delicate and subtle stud to an edgy dangle or a dermal
+            piercing, there’s something to fit everyone’s personal style. With proper care and maintenance, piercings
+            can last for years and help you look your best.
+        </p>
     </div>
     <div class="lg:w-4/12 w-full lg:mt-0 mt-10">
         {{--        <img class="w-40 border-4 border-white origin-top -rotate-12" src="images/img_4.png" alt="">--}}
         {{--        <img class="w-40 border-4 border-white origin-bottom-left rotate-45" src="images/img_4.png" alt="">--}}
         {{--        <img class="w-40 border-4 border-white origin-top-left rotate-12" src="images/img_4.png" alt="">--}}
         {{--        <img class="w-40 border-4 border-white origin-bottom-right rotate-45" src="images/img_4.png" alt="">--}}
-        <img class="w-full grayscale" src="/images/piercing.png" alt="">
+        <img class="w-full grayscale" src="/images/tattoos/piercing.png" alt="">
 
     </div>
 </div>

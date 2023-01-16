@@ -29,6 +29,11 @@
             font-family: 'japan', Arial, sans-serif;
         }
 
+        .buttonBg {
+            background-image: url('images/buttonBg.svg');
+        }
+
+
     </style>
 </head>
 <body class="bg-black text-md">
