@@ -37,23 +37,23 @@ class TattooController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->image);
+        dd(phpinfo());
 
         $tattoo = new tattoo;
         $tattoo->name = $request->name;
         $tattoo->price = $request->price;
         $tattoo->hours = $request->hours;
 
-        if ($request->hasFile('image')) {
+        if ($request->file('image')) {
             $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $filename = $request->file('image')->getClientOriginalName();
 //            Image::make($image)->resize(300, 300)->
 
             $image->move(base_path() . '/storage/app/public', $filename);
 
 //            $image->save(storage_path('/uploads/' . $filename));
             $tattoo->image = $filename;
-            $tattoo->save();
+//            $tattoo->save();
         };
 
         $tattoo->save();
@@ -113,7 +113,7 @@ class TattooController extends Controller
         };
 
         $tattoo->update();
-        return Response::json(["hasFile"=>$request->hasFile("image")]);
+        return Response::json(["hasFile" => $request->hasFile("image")]);
 //
 //
 //

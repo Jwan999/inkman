@@ -201,7 +201,7 @@
             addTattoo() {
                 let formData = new FormData();
                 formData.append('image', this.image);
-
+                // console.log(this.image)
                 axios.post('/add/tattoo',
                     formData, {
                         headers: {
