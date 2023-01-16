@@ -67,6 +67,10 @@
             /*left: 0px;*/
         }
 
+        .japan-font {
+            font-family: 'japan', Arial, sans-serif;
+        }
+
         .right-border {
             background-image: url('/images/Right.svg');
             /*bg-re*/
