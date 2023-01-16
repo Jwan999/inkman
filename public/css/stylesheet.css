@@ -35,7 +35,7 @@ body {
     background-image: url("/images/heroBG.png");
     background-repeat: no-repeat;
     /*object-fit: fill;*/
-    /*width: 100%;*/
+    width: 100%;
     /*height: 100%;*/
     object-fit: none;
 }

@@ -25,14 +25,14 @@
             <div class="z-10 hover:opacity-100 opacity-90">
                 <div
                     class="border-4 border-white bg-white text-gray-900 -mt-6 -ml-6 hover:transform hover:scale-125 ease-in-out duration-300">
-                    <img class="object-cover lg:h-32 h-20 w-full" src="images/tattoos/IMG_3315.JPG" alt="">
+                    <img class="object-cover lg:h-32 h-20 w-full" src="images/tattoos/IMG_3315.png" alt="">
 {{--                    <p dir="rtl" class="p-1 font-bold text-start italic text-center">SUPER HOT</p>--}}
                 </div>
             </div>
             <div class="z-10 hover:opacity-100 opacity-90">
                 <div
                     class="border-4 border-white bg-white text-gray-900 -mr-4 -mt-2 hover:transform hover:scale-125 ease-in-out duration-300">
-                    <img class="object-cover lg:h-32 h-20 w-full" src="images/tattoos/photo_2022-10-09_13-32-39.jpg"
+                    <img class="object-cover lg:h-32 h-20 w-full" src="images/tattoos/photo_2022-10-09_13-32-39.png"
                          alt="">
 {{--                    <p class="p-1 font-bold text-center">???</p>--}}
                 </div>
@@ -40,7 +40,7 @@
             <div class="z-10 hover:opacity-100 opacity-90">
                 <div
                     class="border-4 border-white bg-white text-gray-900 -mt-8 -mr-6 hover:transform hover:scale-125 ease-in-out duration-300">
-                    <img class="object-cover lg:h-32 h-20 w-full" src="images/tattoos/photo_2022-10-09_13-32-51.jpg"
+                    <img class="object-cover lg:h-32 h-20 w-full" src="images/tattoos/photo_2022-10-09_13-32-51.png"
                          alt="">
 {{--                    <p class="p-1 font-bold text-center">???</p>--}}
                 </div>
