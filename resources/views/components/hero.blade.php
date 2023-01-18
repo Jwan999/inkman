@@ -1,4 +1,4 @@
-<div class="hero-bg h-screen w-full bg-fixed lg:bg-contain bg-cover bg-center">
+<div class="hero-bg h-screen lg:w-full w-auto lg:bg-fixed lg:bg-contain bg-cover bg-center">
 
     <div class="lg:px-20 lg:pt-60 px-6 pt-60">
         <h1 class="japan-font lg:text-9xl text-7xl text-red lg:text-left text-center">
@@ -8,6 +8,23 @@
     </div>
 
 </div>
+
+
+<div>
+
+</div>
+
+
+{{--.hero-bg {--}}
+{{--/*background-size: cover;*/--}}
+{{--background-image: url("/images/heroBG.png");--}}
+{{--background-repeat: no-repeat;--}}
+{{--/*object-fit: fill;*/--}}
+{{--/*width: 100%;*/--}}
+{{--/*height: 100%;*/--}}
+{{--/*object-fit: none;*/--}}
+{{--}--}}
+
 
 <div data-aos="fade-down"
      data-aos-easing="linear"
