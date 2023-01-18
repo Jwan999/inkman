@@ -9,7 +9,7 @@
 
 {{--    </div>--}}
 {{--</div>--}}
-<div class="px-6">
+<div class="lg:px-6 px-4">
     <div class="z-20 lg:mt-72 mt-48">
         <button class="cybr-btn monthly-text">
             <div class="text-5xl font-bold text-center -skew-y-3 -inset-1 pt-10">

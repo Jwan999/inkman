@@ -6,7 +6,7 @@
     <p class="text-gray-300 text-lg mt-6 lg:w-8/12 w-full">
         With creativity tattoos can be vibrant, imaginative works of art that would express your unique style and
         personality. It's a way to make a bold statement and stand out,
-        <a href="/tattoos" class="cursor-pointer text-red hover:uppercase hover:text-red text-start lg:text-center font-bold text-lg">get inspired.</a>
+        <a href="/tattoos" class="cursor-pointer text-red hover:uppercase hover:text-red text-start lg:text-center font-bold text-xl">get inspired.</a>
     </p>
 
     {{--image before after --}}

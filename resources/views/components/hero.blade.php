@@ -14,6 +14,6 @@
      data-aos-duration="300">
 
     <div class="flex justify-center">
-        <img class="object-contain lg:scale-100 scale-175 lg:mt-0 mt-10" src="/images/tipsForTattoo.png" alt="">
+        <img class="object-contain lg:scale-100 scale-175 lg:mt-0 mt-10" src="/images/img.png" alt="">
     </div>
 </div>
