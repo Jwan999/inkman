@@ -4,9 +4,9 @@
     {{--        <h1 class="py-6 text-4xl text-center text-red font-bold"></h1>--}}
     {{--    </div>--}}
     <div class="flex justify-center">
-        <div class="sign-wrap">
-            <div class="sign lg:px-20 lg:py-20 px-10 py-16">
-                <h1 class="neon lg:text-8xl text-5xl japan-font">inkman</h1>
+        <div class="sign-wrap lg:w-auto w-full">
+            <div class="sign lg:w-auto w-full lg:px-20 lg:py-20 px-10 py-16">
+                <h1 class="neon lg:text-8xl text-5xl japan-font flex justify-center">inkman</h1>
             </div>
         </div>
     </div>

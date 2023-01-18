@@ -21,7 +21,7 @@
                 class="w-98 object-center border-8 border-white hover:transform hover:scale-110 ease-in-out duration-300"
                 src="images/tattoos/40-2.png" alt="">
         </div>
-        <div class="grid grid-cols-3 lg:gap-8 gap-6 lg:-mt-16 -mt-24">
+        <div class="grid grid-cols-3 lg:gap-8 gap-6 lg:-mt-16 -mt-14">
             <div class="z-10 hover:opacity-100 opacity-90">
                 <div
                     class="border-4 border-white bg-white text-gray-900 -mt-6 -ml-6 hover:transform hover:scale-125 ease-in-out duration-300">

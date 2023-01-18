@@ -25,6 +25,15 @@
             font-family: 'Rajdhani', sans-serif;
         }
 
+        .tips-img{
+            background-image: url("images/tipsForTattoo.png");
+        }
+
+        html, body {
+            position:relative;
+            overflow-x:hidden;
+        }
+
         .japan-font {
             font-family: 'japan', Arial, sans-serif;
         }
@@ -36,7 +45,7 @@
 
     </style>
 </head>
-<body class="bg-black text-md">
+<body class="bg-black text-md overflow-x-hidden">
 <div id="app">
     {{--delete confirmation--}}
     <div v-if="isVisible" class="flex justify-center mt-10">

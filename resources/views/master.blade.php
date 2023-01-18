@@ -5,16 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/stylesheet.css" rel="stylesheet">
-    <link href="/css/neon.css" rel="stylesheet">
-    <link href="/css/sketches.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-
-    {{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
-    {{--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
-    {{--    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500&display=swap" rel="stylesheet">--}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +12,7 @@
     <link rel="icon" href="/images/inkman2.png">
 
     <title>inkman Studio</title>
+
     <style>
         body {
             /*border-image: url('/images/Left.png') 30 stretch;*/
@@ -29,6 +20,17 @@
             font-family: 'Rajdhani', sans-serif;
             overflow-x: hidden;
             height: 100%;
+        }
+
+        .tips-img {
+            background-image: url("images/tipsForTattoo.png");
+            width: 100%;
+
+        }
+
+        html, body {
+            position: relative;
+            overflow-x: hidden;
         }
 
         .text-2 {
@@ -292,6 +294,18 @@
             --primary-hue: 260;
         }
     </style>
+
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/stylesheet.css" rel="stylesheet">
+    <link href="/css/neon.css" rel="stylesheet">
+    <link href="/css/sketches.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    {{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
+    {{--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
+    {{--    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500&display=swap" rel="stylesheet">--}}
+
 
 </head>
 <body class="bg-black text-white max-w-full">

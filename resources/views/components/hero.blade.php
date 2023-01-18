@@ -1,4 +1,4 @@
-<div class="hero-bg h-screen bg-fixed lg:bg-contain bg-cover bg-center">
+<div class="hero-bg h-screen w-full bg-fixed lg:bg-contain bg-cover bg-center">
 
     <div class="lg:px-20 lg:pt-60 px-6 pt-60">
         <h1 class="japan-font lg:text-9xl text-7xl text-red lg:text-left text-center">
