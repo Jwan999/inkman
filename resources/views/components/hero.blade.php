@@ -9,23 +9,6 @@
 
 </div>
 
-
-<div>
-
-</div>
-
-
-{{--.hero-bg {--}}
-{{--/*background-size: cover;*/--}}
-{{--background-image: url("/images/heroBG.png");--}}
-{{--background-repeat: no-repeat;--}}
-{{--/*object-fit: fill;*/--}}
-{{--/*width: 100%;*/--}}
-{{--/*height: 100%;*/--}}
-{{--/*object-fit: none;*/--}}
-{{--}--}}
-
-
 <div data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="300">
