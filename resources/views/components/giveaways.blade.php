@@ -21,7 +21,8 @@
                 MONTHLY
                 <h1 class="text-white tracking-widest">GIVEAWAYS</h1>
             </div>
-            <h1 class="text-white text-sm mt-2 font-mono">click and check it out</h1>
+            <a href="https://www.instagram.com/stories/highlights/18294517789025308/"
+               class="text-white text-sm mt-2 font-mono">click <span class="text-xl font-bold">here</span> check it out</a>
 
             {{--        <a href="" class="text-sm">check it out_</a>--}}
             {{--        Check it out--}}

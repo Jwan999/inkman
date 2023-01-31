@@ -1,4 +1,3 @@
-
 <div id="reachout" class="pt-20 pb-24 neon-bg lg:mt-24 mt-20">
     {{--    <div class="">--}}
     {{--        <h1 class="py-6 text-4xl text-center text-red font-bold"></h1>--}}
@@ -37,7 +36,8 @@
             </svg>
             <h1 class="font-bold text-lg">Booking</h1>
             <p class="text-gray-200 space-y-2">
-                Slide into my <a class="text-red hover:text-white underline font-bold cursor-pointer">dms</a> to book
+                Slide into my <a href="https://www.instagram.com/direct/t/340282366841710300949128156606220161499"
+                                 class="text-red hover:text-white underline font-bold cursor-pointer">dms</a> to book
                 your tattoo
             </p>
         </div>
@@ -177,7 +177,7 @@
             </div>
         </a>
         {{--        telegram--}}
-        <a href="https://www.instagram.com/inkman.iq/">
+        <a href="https://t.me/+amxCaJDQK8NjYjFi">
             <div class="flex space-x-2 items-center hover:fill-red fill-white hover:text-red font-bold">
 
                 <svg class="w-6 h-6" viewBox="0 0 534 613" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +196,7 @@
             </div>
         </a>
         {{--        facebook--}}
-        <a href="https://www.instagram.com/inkman.iq/">
+        <a href="https://web.facebook.com/ibraheem.tattooer">
             <div class="flex space-x-2 items-center hover:fill-red fill-white hover:text-red font-bold">
 
                 <svg class="w-6 h-6 " viewBox="0 0 312 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
