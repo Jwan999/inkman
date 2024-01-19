@@ -343,7 +343,6 @@
         methods: {
             getTattoos() {
                 axios.get('/api/tattoos').then(response => {
-                    console.log(response.data)
                     this.tattoos = response.data
                 })
             }
@@ -379,12 +378,12 @@
     });
 
 </script>
-<script>
-    const container = document.querySelector('.container');
-    document.querySelector('.slider').addEventListener('input', (e) => {
-        container.style.setProperty('--position', `${e.target.value}%`);
-    })
-</script>
+{{--<script>--}}
+{{--    const container = document.querySelector('.container');--}}
+{{--    document.querySelector('.slider').addEventListener('input', (e) => {--}}
+{{--        container.style.setProperty('--position', `${e.target.value}%`);--}}
+{{--    })--}}
+{{--</script>--}}
 
 </body>
 </html>
