@@ -17,9 +17,7 @@ Route::get('/dashboard', function () {
     return view('dashboard.master');
 });
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', [\App\Http\Controllers\TattooController::class, 'index']);
 
 Route::post('/add/tattoo', [\App\Http\Controllers\TattooController::class, 'store']);
 Route::delete('/delete/tattoo/{id}', [\App\Http\Controllers\TattooController::class, 'destroy']);
